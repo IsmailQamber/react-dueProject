@@ -1,17 +1,21 @@
 import hikingTrips from "../hiking";
 import TripItem from "./TripItem";
+import Search from "./Search";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const TripList = (props) => {
-  const [length, setLength] = useState();
+  const [length, setLength] = useState(0);
   const [query, setQuery] = useState("");
-
+  const [diff, setDiff] = useState("");
+  console.log(diff);
   const Trips = hikingTrips
+
     .filter(
       (hikingTrip) =>
-        hikingTrip.length <= +length &&
-        hikingTrip.name.toLowerCase().includes(query.toLowerCase())
+        (hikingTrip.length <= +length &&
+          hikingTrip.name.toLowerCase().includes(query.toLowerCase())) ||
+        hikingTrip.difficulty.toLocaleLowerCase() === diff.toLocaleLowerCase()
     )
 
     .map((hikingTrip) => (
@@ -24,24 +28,24 @@ const TripList = (props) => {
 
   return (
     <div>
+      <select
+        onChange={(event) => setDiff(event.target.value)}
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option selected>Open this select menu</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+
+      <Search
+        setLength={setLength}
+        hikingTrips={hikingTrips}
+        length={length}
+        setQuery={setQuery}
+      />
       {Trips}
-      <label for="customRange2" class="form-label">
-        Filter length
-      </label>
-      <input
-        value={length}
-        onChange={(event) => setLength(event.target.value)}
-        type="range"
-        class="form-range"
-        min="1"
-        max={hikingTrips.length}
-        id="customRange2"
-      />
-      <input
-        onChange={(event) => setQuery(event.target.value)}
-        class="form-range"
-        id="customRange2"
-      />
     </div>
   );
 };
