@@ -5,7 +5,7 @@ const hikingTrips = [
     image: " ",
     city: "Saar",
     difficulty: "Eazy",
-    length: 2,
+    length: "2",
     rating: 3,
   },
   {
@@ -14,7 +14,7 @@ const hikingTrips = [
     image: " ",
     city: "JidAli",
     difficulty: "Medium",
-    length: 1,
+    length: "1",
     rating: 2,
   },
   {
@@ -23,7 +23,7 @@ const hikingTrips = [
     image: " ",
     city: "Hamad town",
     difficulty: "Hard",
-    length: 3,
+    length: "3",
     rating: 1,
   },
 ];
