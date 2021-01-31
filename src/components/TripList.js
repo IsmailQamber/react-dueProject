@@ -7,11 +7,12 @@ const TripList = () => {
 
   console.log(length);
   const Trips = hikingTrips
+    .filter((hikingTrip) => hikingTrip.length === +length)
+
     .map((hikingTrip) => (
       <TripItem key={hikingTrip.id} hikingTrip={hikingTrip} />
-    ))
-    .filter((hikingTrip) => hikingTrip.length === length);
-  console.log(Trips.length);
+    ));
+
   return (
     <div>
       {Trips}
