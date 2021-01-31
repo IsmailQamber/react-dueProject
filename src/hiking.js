@@ -2,6 +2,7 @@ const hikingTrips = [
   {
     id: 1,
     name: "Saar Hike",
+    slug: "saar-hike",
     image: " ",
     city: "Saar",
     difficulty: "Eazy",
@@ -11,6 +12,7 @@ const hikingTrips = [
   {
     id: 2,
     name: "JidAli",
+    slug: "jid-ali",
     image: " ",
     city: "JidAli",
     difficulty: "Medium",
@@ -20,6 +22,7 @@ const hikingTrips = [
   {
     id: 3,
     name: "Hamad town",
+    slug: "hamad-town",
     image: " ",
     city: "Hamad town",
     difficulty: "Hard",
