@@ -28,7 +28,12 @@ const NavBar = (props) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Pricing</a>
+              <Link
+                to={`/trips/${props.hikingTrips.difficulty}`}
+                className="nav-link"
+              >
+                Pricing
+              </Link>
             </li>
             <li className="nav-item dropdown"></li>
           </ul>

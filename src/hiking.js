@@ -6,7 +6,7 @@ const hikingTrips = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/8/83/Sur_burial_mounds.jpg",
     city: "Saar",
-    difficulty: "Eazy",
+    difficulty: "Easy",
     length: 2,
     rating: 3,
   },

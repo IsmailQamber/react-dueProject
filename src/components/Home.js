@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import hikingTrips from "../hiking";
 import TripItem from "./TripItem";
+import { Pic, Name, Text } from "./Styles";
 const Home = (props) => {
   return (
     <div
@@ -10,15 +11,17 @@ const Home = (props) => {
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src={props.trip.image}
-            class="d-block w-100"
-            alt={props.trip.name}
-            height="50%"
-          />
+          <Link to={`/trips/${props.trip.slug}`}>
+            {" "}
+            <Pic
+              src={props.trip.image}
+              class="d-block w-100"
+              alt={props.trip.name}
+            />
+          </Link>
           <div class="carousel-caption d-none d-md-block">
-            <h5>{props.trip.name}</h5>
-            <p>{props.trip.difficulty}</p>
+            <Name>{props.trip.name}</Name>
+            <Text>{props.trip.difficulty}</Text>
           </div>
         </div>
       </div>

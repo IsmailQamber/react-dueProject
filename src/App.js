@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import TripList from "./components/TripList.js";
 import HikeDetail from "./components/HikeDetail";
+import DiffDetail from "./components/DiffDetails";
 import hikingTrips from "./hiking";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -14,14 +15,18 @@ function App() {
 
   const [trip, setTrip] = useState(null);
 
-  const setView = () => {
+  /*const setView = () => {
     trip ? <TripList setTrip={setTrip} /> : <HikeDetail setTrip={setTrip} />;
-  };
+  };*/
   return (
     <div className="App">
-      <NavBar />
+      <NavBar hikingTrips={hikingTrips} />
+
       <Switch>
-        <Route path="/trips/:hikeSlug">
+        <Route exact path="/trips/:hikeDiff">
+          <DiffDetail />
+        </Route>
+        <Route exact path="/trips/:hikeSlug">
           <HikeDetail />
         </Route>
         <Route path="/trips">
